@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "month": "01_Jan",
+    "weekNo": "Week 4",
+    "plannedHours": 8.5,
+    "actualHours": 8.5,
+    "planType": "Planned",
+    "group2": "Others",
+    "project": "Others",
+    "activity": "Documentation/Status Reports/Meetings",
+    "reason": "",
+    "remarks": ""
+  },
+  {
+    "id": 2,
+    "month": "07_Jul",
+    "weekNo": "Week 1",
+    "plannedHours": 14.25,
+    "actualHours": "",
+    "planned": "Planned",
+    "category": "Project",
+    "project": "SFA",
+    "activity": "Implementation: Coding",
+    "reason": "",
+    "remarks": ""
+  }
+]

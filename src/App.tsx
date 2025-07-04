@@ -1,10 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { ProdlogsTable } from "./components/ProdlogsTable";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
+    <>
+      <ThemeToggle />
+      <div className="flex min-h-svh flex-col items-center justify-center">
+        <ProdlogsTable />
+      </div>
+    </>
   );
 }
 
