@@ -52,47 +52,37 @@ export function ProdlogsTable() {
   };
 
   return (
-    <div className="p-4">
+    <div className="px-2 py-4 sm:px-4 md:px-8 max-w-full w-full mx-auto">
       <h2
-        className="text-xl font-bold mb-4"
+        className="text-lg sm:text-xl font-bold mb-4"
         style={{ color: "var(--color-brand-blue)" }}
       >
-        Productivity Log
+        Productivity Logs
       </h2>
-      <div className="bg-white dark:bg-[var(--background)] rounded-2xl shadow-lg border border-[var(--border)]">
-        <table className="min-w-full rounded-xl overflow-hidden divide-y divide-[var(--border)]">
+      <div className="bg-white dark:bg-[var(--background)] rounded-xl sm:rounded-2xl shadow-lg border border-[var(--border)] overflow-x-auto">
+        <table className="min-w-[700px] w-full rounded-xl overflow-hidden divide-y divide-[var(--border)] text-xs sm:text-sm">
           <thead>
             <tr className="bg-[var(--muted)] text-[var(--foreground)]">
-              <th className="p-4 font-semibold text-left text-sm">Month</th>
-              <th className="p-4 font-semibold text-left text-sm">Week No</th>
-              <th className="p-4 font-semibold text-left text-sm">
-                Planned Hours
-              </th>
-              <th className="p-2 font-semibold text-left text-sm">
-                Actual Consumed
-              </th>
-              <th className="p-2 font-semibold text-left text-sm">
-                Planned or Unplanned
-              </th>
-              <th className="p-2 font-semibold text-left text-sm">Category</th>
-              <th className="p-2 font-semibold text-left text-sm">Project</th>
-              <th className="p-2 font-semibold text-left text-sm">
-                Activity or Task
-              </th>
-              <th className="p-2 font-semibold text-left text-sm">
-                Reason for Deviation
-              </th>
-              <th className="p-3 font-semibold text-left text-sm">Remarks</th>
-              <th className="p-3 font-semibold text-left text-sm">Action</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Month</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Week No</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Planned Hours</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Actual Consumed</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Planned/Unplanned</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Category</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Project</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Activity/Task</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Reason</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Remarks</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">Action</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row) => (
               <tr
                 key={row.id}
-                className="even:bg-[var(--color-brand-orange)]/10 dark:even:bg-[var(--color-brand-blue)]/10 rounded-lg hover:bg-[var(--muted)] transition-colors"
+                className="even:bg-[var(--color-brand-orange)]/10 dark:even:bg-[var(--color-brand-blue)]/10 rounded-lg hover:bg-[var(--muted)] transition-colors border"
               >
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={monthOptions}
                     value={row.month}
@@ -100,7 +90,7 @@ export function ProdlogsTable() {
                     placeholder="Select month"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={weekOptions}
                     value={row.weekNo}
@@ -108,25 +98,27 @@ export function ProdlogsTable() {
                     placeholder="Select week"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <InputDefault
                     type="number"
+                    className="no-spinner"
                     value={row.plannedHours}
                     onChange={(e) =>
                       handleChange(row.id, "plannedHours", e.target.value)
                     }
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <InputDefault
                     type="number"
+                    className="no-spinner"
                     value={row.actualHours}
                     onChange={(e) =>
                       handleChange(row.id, "actualHours", e.target.value)
                     }
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={plannedOptions}
                     value={row.planned}
@@ -134,7 +126,7 @@ export function ProdlogsTable() {
                     placeholder="Planned/Unplanned"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={categoryOptions}
                     value={row.category}
@@ -142,7 +134,7 @@ export function ProdlogsTable() {
                     placeholder="Select category"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={projectOptions}
                     value={row.project}
@@ -150,7 +142,7 @@ export function ProdlogsTable() {
                     placeholder="Select project"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={activityOptions}
                     value={row.activity}
@@ -158,7 +150,7 @@ export function ProdlogsTable() {
                     placeholder="Select activity"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <SelectDefault
                     options={reasonOptions}
                     value={row.reason}
@@ -166,7 +158,7 @@ export function ProdlogsTable() {
                     placeholder="Select reason(if any)"
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <InputDefault
                     value={row.remarks}
                     onChange={(e) =>
@@ -174,9 +166,10 @@ export function ProdlogsTable() {
                     }
                   />
                 </td>
-                <td className="p-3 align-middle">
+                <td className="p-2 sm:p-3 align-middle">
                   <ButtonDefault
-                    className="bg-red-200 hover:bg-red-400 dark:bg-red-800 dark:hover:bg-red-600 dark:text-gray-100"
+                    variant="ghost"
+                    className="px-2 py-1 rounded text-xs sm:text-sm text-red-500 hover:text-red-700 dark:text-red-300 dark:hover:text-red-500"
                     onClick={() => handleRemoveRow(row.id)}
                   >
                     Remove
@@ -185,30 +178,32 @@ export function ProdlogsTable() {
               </tr>
             ))}
             <tr>
-              <ButtonDefault className="m-4" onClick={handleAddRow}>
-                Add Row
-              </ButtonDefault>
+              <td colSpan={11} className="text-center py-2">
+                <ButtonDefault className="m-2 sm:m-4 text-gray-100 bg-slate-900 hover:bg-slate-900/85 hover:text-gray-100" variant="ghost" onClick={handleAddRow}>
+                  Add Row
+                </ButtonDefault>
+              </td>
             </tr>
           </tbody>
         </table>
-        <div className="flex items-center justify-between mt-4 p-4">
-          <span className="text-sm text-muted-foreground">
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-4 p-2 sm:p-4 gap-2">
+          <span className="text-xs sm:text-sm text-muted-foreground">
             0 of 68 row(s) selected.
           </span>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button className="px-2 py-1 rounded bg-[var(--muted)]">
               {"<"}
             </button>
-            <span className="text-sm">Page 1 of 7</span>
+            <span className="text-xs sm:text-sm">Page 1 of 7</span>
             <button className="px-2 py-1 rounded bg-[var(--muted)]">
               {">"}
             </button>
-            <select className="ml-2 border rounded px-2 py-1 text-sm">
+            <select className="ml-2 border rounded px-2 py-1 text-xs sm:text-sm">
               <option>10</option>
               <option>25</option>
               <option>50</option>
             </select>
-            <span className="ml-1 text-sm">Rows per page</span>
+            <span className="ml-1 text-xs sm:text-sm">Rows per page</span>
           </div>
         </div>
       </div>
