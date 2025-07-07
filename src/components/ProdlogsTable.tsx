@@ -185,9 +185,11 @@ export function ProdlogsTable() {
               </tr>
             ))}
             <tr>
-              <ButtonDefault className="m-4" onClick={handleAddRow}>
-                Add Row
-              </ButtonDefault>
+              <td>
+                <ButtonDefault className="m-4" onClick={handleAddRow}>
+                  Add Row
+                </ButtonDefault>
+              </td>
             </tr>
           </tbody>
         </table>
