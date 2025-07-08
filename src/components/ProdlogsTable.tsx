@@ -65,12 +65,20 @@ export function ProdlogsTable() {
             <tr className="bg-[var(--muted)] text-[var(--foreground)]">
               <th className="p-2 sm:p-3 font-semibold text-left">Month</th>
               <th className="p-2 sm:p-3 font-semibold text-left">Week No</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Planned Hours</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Actual Consumed</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Planned/Unplanned</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">
+                Planned Hours
+              </th>
+              <th className="p-2 sm:p-3 font-semibold text-left">
+                Actual Consumed
+              </th>
+              <th className="p-2 sm:p-3 font-semibold text-left">
+                Planned/Unplanned
+              </th>
               <th className="p-2 sm:p-3 font-semibold text-left">Category</th>
               <th className="p-2 sm:p-3 font-semibold text-left">Project</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Activity/Task</th>
+              <th className="p-2 sm:p-3 font-semibold text-left">
+                Activity/Task
+              </th>
               <th className="p-2 sm:p-3 font-semibold text-left">Reason</th>
               <th className="p-2 sm:p-3 font-semibold text-left">Remarks</th>
               <th className="p-2 sm:p-3 font-semibold text-left">Action</th>
@@ -179,7 +187,11 @@ export function ProdlogsTable() {
             ))}
             <tr>
               <td colSpan={11} className="text-center py-2">
-                <ButtonDefault className="m-2 sm:m-4 text-gray-100 bg-slate-900 hover:bg-slate-900/85 hover:text-gray-100" variant="ghost" onClick={handleAddRow}>
+                <ButtonDefault
+                  className="m-2 sm:m-4 text-gray-100 bg-slate-900 hover:bg-slate-900/85 hover:text-gray-100"
+                  variant="ghost"
+                  onClick={handleAddRow}
+                >
                   Add Row
                 </ButtonDefault>
               </td>

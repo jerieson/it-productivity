@@ -44,79 +44,72 @@
 
 :root {
   --radius: 0.625rem;
-  /* Your custom color palette */
-  --navy-blue: #13294b;
-  --ocean-blue: #0174be;
-  --amber: #ffa400;
-  --cream: #fff0ce;
 
-  /* Light theme using your colors */
-  --background: #ffffff;
-  --foreground: var(--navy-blue);
-  --card: #ffffff;
-  --card-foreground: var(--navy-blue);
-  --popover: #ffffff;
-  --popover-foreground: var(--navy-blue);
-  --primary: var(--ocean-blue);
-  --primary-foreground: #ffffff;
-  --secondary: var(--cream);
-  --secondary-foreground: var(--navy-blue);
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: var(--amber);
+  /* Minimal, soft palette */
+  --navy-blue: #22304a; /* Soft dark blue */
+  --navy-blue-light: #e8ecf3; /* Very light blue for backgrounds */
+  --yellow: #ffe066; /* Muted yellow */
+  --yellow-light: #fff9e3; /* Very light yellow for highlights */
+  --gray: #f5f6fa; /* Main background */
+  --gray-dark: #dbe1ea; /* Card, border */
+  --text: #222b38; /* Main text */
+  --text-muted: #6b7280; /* Muted text */
+
+  --background: var(--gray);
+  --foreground: var(--text);
+  --card: #fff;
+  --card-foreground: var(--text);
+  --popover: #fff;
+  --popover-foreground: var(--text);
+  --primary: var(--navy-blue);
+  --primary-foreground: #fff;
+  --secondary: var(--navy-blue-light);
+  --secondary-foreground: var(--text);
+  --muted: var(--gray-dark);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--yellow);
   --accent-foreground: var(--navy-blue);
-  --destructive: #dc2626;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: var(--ocean-blue);
-  --chart-1: var(--ocean-blue);
-  --chart-2: var(--amber);
-  --chart-3: var(--navy-blue);
-  --chart-4: #8b5cf6;
-  --chart-5: #06b6d4;
-  --sidebar: #f8fafc;
+  --destructive: #e57373;
+  --border: var(--gray-dark);
+  --input: var(--gray-dark);
+  --ring: var(--navy-blue);
+  --sidebar: var(--navy-blue-light);
   --sidebar-foreground: var(--navy-blue);
-  --sidebar-primary: var(--ocean-blue);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--cream);
+  --sidebar-primary: var(--navy-blue);
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: var(--yellow-light);
   --sidebar-accent-foreground: var(--navy-blue);
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: var(--ocean-blue);
+  --sidebar-border: var(--gray-dark);
+  --sidebar-ring: var(--navy-blue);
 }
 
 .dark {
-  /* Dark theme using your colors */
-  --background: var(--navy-blue);
-  --foreground: #f8fafc;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: var(--ocean-blue);
-  --primary-foreground: #ffffff;
-  --secondary: #334155;
-  --secondary-foreground: #f8fafc;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: var(--amber);
-  --accent-foreground: var(--navy-blue);
-  --destructive: #ef4444;
-  --border: #334155;
-  --input: #334155;
-  --ring: var(--ocean-blue);
-  --chart-1: var(--ocean-blue);
-  --chart-2: var(--amber);
-  --chart-3: var(--cream);
-  --chart-4: #a855f7;
-  --chart-5: #0891b2;
-  --sidebar: #1e293b;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: var(--ocean-blue);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #334155;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #334155;
-  --sidebar-ring: var(--ocean-blue);
+  --background: #1a2233;
+  --foreground: #e8ecf3;
+  --card: #232c3d;
+  --card-foreground: #e8ecf3;
+  --popover: #232c3d;
+  --popover-foreground: #e8ecf3;
+  --primary: #2c3a55;
+  --primary-foreground: #fff;
+  --secondary: #232c3d;
+  --secondary-foreground: #e8ecf3;
+  --muted: #232c3d;
+  --muted-foreground: #a0aec0;
+  --accent: #ffe066;
+  --accent-foreground: #232c3d;
+  --destructive: #e57373;
+  --border: #232c3d;
+  --input: #232c3d;
+  --ring: #ffe066;
+  --sidebar: #232c3d;
+  --sidebar-foreground: #ffe066;
+  --sidebar-primary: #2c3a55;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #2c3a55;
+  --sidebar-accent-foreground: #ffe066;
+  --sidebar-border: #232c3d;
+  --sidebar-ring: #ffe066;
 }
 
 @layer base {
