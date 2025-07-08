@@ -43,63 +43,54 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
 
-  /* Minimal, soft palette */
-  --navy-blue: #22304a; /* Soft dark blue */
-  --navy-blue-light: #e8ecf3; /* Very light blue for backgrounds */
-  --yellow: #ffe066; /* Muted yellow */
-  --yellow-light: #fff9e3; /* Very light yellow for highlights */
-  --gray: #f5f6fa; /* Main background */
-  --gray-dark: #dbe1ea; /* Card, border */
-  --text: #222b38; /* Main text */
-  --text-muted: #6b7280; /* Muted text */
-
-  --background: var(--gray);
-  --foreground: var(--text);
-  --card: #fff;
-  --card-foreground: var(--text);
+  --background: #f8fafc; /* Tailwind slate-50 */
+  --foreground: #222b38;
+  --card: #fff; /* Pure white for cards */
+  --card-foreground: #222b38;
   --popover: #fff;
-  --popover-foreground: var(--text);
-  --primary: var(--navy-blue);
+  --popover-foreground: #222b38;
+  --primary: #22304a; /* Navy blue */
   --primary-foreground: #fff;
-  --secondary: var(--navy-blue-light);
-  --secondary-foreground: var(--text);
-  --muted: var(--gray-dark);
-  --muted-foreground: var(--text-muted);
-  --accent: var(--yellow);
-  --accent-foreground: var(--navy-blue);
+  --secondary: #f1f5f9; /* Tailwind slate-100 */
+  --secondary-foreground: #222b38;
+  --muted: #f3f4f6; /* Tailwind gray-100 */
+  --muted-foreground: #6b7280;
+  --accent: #ffe066; /* Soft yellow */
+  --accent-foreground: #22304a;
   --destructive: #e57373;
-  --border: var(--gray-dark);
-  --input: var(--gray-dark);
-  --ring: var(--navy-blue);
-  --sidebar: var(--navy-blue-light);
-  --sidebar-foreground: var(--navy-blue);
-  --sidebar-primary: var(--navy-blue);
+  --border: #e5e7eb; /* Tailwind gray-200 */
+  --input: #e5e7eb;
+  --ring: #22304a;
+  --sidebar: #f1f5f9;
+  --sidebar-foreground: #22304a;
+  --sidebar-primary: #22304a;
   --sidebar-primary-foreground: #fff;
-  --sidebar-accent: var(--yellow-light);
-  --sidebar-accent-foreground: var(--navy-blue);
-  --sidebar-border: var(--gray-dark);
-  --sidebar-ring: var(--navy-blue);
+  --sidebar-accent: #ffe066;
+  --sidebar-accent-foreground: #22304a;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #22304a;
 }
 
 .dark {
-  --background: #1a2233;
+  --background: #181f2a; /* Very dark blue/gray */
   --foreground: #e8ecf3;
-  --card: #232c3d;
+  --card: #232c3d; /* Slightly lighter than background */
   --card-foreground: #e8ecf3;
   --popover: #232c3d;
   --popover-foreground: #e8ecf3;
-  --primary: #2c3a55;
+  --primary: #3b4a6b; /* Lighter navy for buttons/accents */
   --primary-foreground: #fff;
   --secondary: #232c3d;
   --secondary-foreground: #e8ecf3;
-  --muted: #232c3d;
+  --muted: #232c3d; /* Muted is same as card, but let's make it lighter: */
+  --muted: #2a3346; /* Slightly lighter for muted backgrounds */
   --muted-foreground: #a0aec0;
   --accent: #ffe066;
   --accent-foreground: #232c3d;
   --destructive: #e57373;
-  --border: #232c3d;
+  --border: #2d3748; /* Lighter than card for visible borders */
   --input: #232c3d;
   --ring: #ffe066;
   --sidebar: #232c3d;
@@ -108,8 +99,9 @@
   --sidebar-primary-foreground: #fff;
   --sidebar-accent: #2c3a55;
   --sidebar-accent-foreground: #ffe066;
-  --sidebar-border: #232c3d;
+  --sidebar-border: #2d3748;
   --sidebar-ring: #ffe066;
+  --hover: #232c3d;
 }
 
 @layer base {

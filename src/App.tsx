@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
+import { ProdlogsTable } from "./components/ProdlogsTable";
 // import { ThemeToggle } from "./components/ThemeToggle";
 
 function Layout() {
@@ -8,8 +9,10 @@ function Layout() {
     <SidebarProvider>
       <div className="flex min-h-svh">
         <AppSidebar />
-        <div className="flex-1 flex flex-col items-center justify-center p-8">
-          <Outlet />
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <main className="flex-1 overflow-auto">
+            <Outlet />
+          </main>
         </div>
       </div>
     </SidebarProvider>
@@ -22,7 +25,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<h1>Dashboard</h1>} />
-          <Route path="/prodlog" element={<h1>Productivity Log</h1>} />
+          <Route path="/prodlog" element={<ProdlogsTable />} />
           <Route path="/dictionary" element={<h1>Data Dictionary</h1>} />
           <Route path="/reports/weekly" element={<h1>Weekly Reports</h1>} />
           <Route path="/reports/monthly" element={<h1>Monthly Reports</h1>} />

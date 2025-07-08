@@ -52,132 +52,162 @@ export function ProdlogsTable() {
   };
 
   return (
-    <div className="px-2 py-4 sm:px-4 md:px-8 max-w-full w-full mx-auto">
-      <h2
-        className="text-lg sm:text-xl font-bold mb-4"
-        style={{ color: "var(--color-brand-blue)" }}
-      >
-        Productivity Logs
-      </h2>
-      <div className="bg-white dark:bg-[var(--background)] rounded-xl sm:rounded-2xl shadow-lg border border-[var(--border)] overflow-x-auto">
-        <table className="min-w-[700px] w-full rounded-xl overflow-hidden divide-y divide-[var(--border)] text-xs sm:text-sm">
+    <div className="w-full max-w-full px-2 py-3 space-y-4">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <h2 className="text-xl sm:text-2xl font-semibold text-sidebar-foreground">
+          Productivity Logs
+        </h2>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground">
+            {data.length} entries
+          </span>
+        </div>
+      </div>
+
+      {/* Table Container */}
+      <div className="bg-card border border-border rounded-lg shadow-sm overflow-x-auto">
+        <table className="w-full min-w-[600px] text-xs">
           <thead>
-            <tr className="bg-[var(--muted)] text-[var(--foreground)]">
-              <th className="p-2 sm:p-3 font-semibold text-left">Month</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Week No</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">
-                Planned Hours
+            <tr className="bg-muted/50 border-b border-border">
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Month
               </th>
-              <th className="p-2 sm:p-3 font-semibold text-left">
-                Actual Consumed
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Week
               </th>
-              <th className="p-2 sm:p-3 font-semibold text-left">
-                Planned/Unplanned
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Planned
               </th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Category</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Project</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">
-                Activity/Task
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Actual
               </th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Reason</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Remarks</th>
-              <th className="p-2 sm:p-3 font-semibold text-left">Action</th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Type
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Category
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Project
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Activity
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Reason
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Remarks
+              </th>
+              <th className="p-2 text-left font-medium text-muted-foreground">
+                Action
+              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-border">
             {data.map((row) => (
-              <tr
-                key={row.id}
-                className="even:bg-[var(--color-brand-orange)]/10 dark:even:bg-[var(--color-brand-blue)]/10 rounded-lg hover:bg-[var(--muted)] transition-colors border"
-              >
-                <td className="p-2 sm:p-3 align-middle">
+              <tr key={row.id} className="hover:bg-muted/30 transition-colors">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={monthOptions}
                     value={row.month}
                     onChange={(v) => handleChange(row.id, "month", v)}
-                    placeholder="Select month"
+                    placeholder="Month"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={weekOptions}
                     value={row.weekNo}
                     onChange={(v) => handleChange(row.id, "weekNo", v)}
-                    placeholder="Select week"
+                    placeholder="Week"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <InputDefault
                     type="number"
-                    className="no-spinner"
+                    className="no-spinner w-20"
                     value={row.plannedHours}
                     onChange={(e) =>
                       handleChange(row.id, "plannedHours", e.target.value)
                     }
+                    placeholder="hh.mm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <InputDefault
                     type="number"
-                    className="no-spinner"
+                    className="no-spinner w-20"
                     value={row.actualHours}
                     onChange={(e) =>
                       handleChange(row.id, "actualHours", e.target.value)
                     }
+                    placeholder="hh.mm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={plannedOptions}
                     value={row.planned}
                     onChange={(v) => handleChange(row.id, "planned", v)}
-                    placeholder="Planned/Unplanned"
+                    placeholder="Type"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={categoryOptions}
                     value={row.category}
                     onChange={(v) => handleChange(row.id, "category", v)}
-                    placeholder="Select category"
+                    placeholder="Category"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={projectOptions}
                     value={row.project}
                     onChange={(v) => handleChange(row.id, "project", v)}
-                    placeholder="Select project"
+                    placeholder="Project"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={activityOptions}
                     value={row.activity}
                     onChange={(v) => handleChange(row.id, "activity", v)}
-                    placeholder="Select activity"
+                    placeholder="Activity"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <SelectDefault
                     options={reasonOptions}
                     value={row.reason}
                     onChange={(v) => handleChange(row.id, "reason", v)}
-                    placeholder="Select reason(if any)"
+                    placeholder="Reason"
+                    size="sm"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[80px]">
                   <InputDefault
                     value={row.remarks}
                     onChange={(e) =>
                       handleChange(row.id, "remarks", e.target.value)
                     }
+                    placeholder="Notes"
+                    className="min-w-[120px]"
                   />
                 </td>
-                <td className="p-2 sm:p-3 align-middle">
+                <td className="p-2 min-w-[60px]">
                   <ButtonDefault
                     variant="ghost"
-                    className="px-2 py-1 rounded text-xs sm:text-sm text-red-500 hover:text-red-700 dark:text-red-300 dark:hover:text-red-500"
+                    size="sm"
+                    className="text-destructive hover:text-destructive/80"
                     onClick={() => handleRemoveRow(row.id)}
                   >
                     Remove
@@ -185,37 +215,33 @@ export function ProdlogsTable() {
                 </td>
               </tr>
             ))}
-            <tr>
-              <td colSpan={11} className="text-center py-2">
-                <ButtonDefault
-                  className="m-2 sm:m-4 text-gray-100 bg-slate-900 hover:bg-slate-900/85 hover:text-gray-100"
-                  variant="ghost"
-                  onClick={handleAddRow}
-                >
-                  Add Row
-                </ButtonDefault>
-              </td>
-            </tr>
           </tbody>
         </table>
-        <div className="flex flex-col sm:flex-row items-center justify-between mt-4 p-2 sm:p-4 gap-2">
-          <span className="text-xs sm:text-sm text-muted-foreground">
-            0 of 68 row(s) selected.
+
+        {/* Add Row Button */}
+        <div className="p-4 border-t border-border bg-muted/20">
+          <ButtonDefault
+            onClick={handleAddRow}
+            className="w-full sm:w-auto"
+            variant="outline"
+          >
+            Add New Entry
+          </ButtonDefault>
+        </div>
+
+        {/* Pagination */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground px-2 py-2">
+          <span>
+            Showing {data.length} of {data.length} entries
           </span>
-          <div className="flex flex-wrap items-center gap-2">
-            <button className="px-2 py-1 rounded bg-[var(--muted)]">
-              {"<"}
-            </button>
-            <span className="text-xs sm:text-sm">Page 1 of 7</span>
-            <button className="px-2 py-1 rounded bg-[var(--muted)]">
-              {">"}
-            </button>
-            <select className="ml-2 border rounded px-2 py-1 text-xs sm:text-sm">
-              <option>10</option>
-              <option>25</option>
-              <option>50</option>
-            </select>
-            <span className="ml-1 text-xs sm:text-sm">Rows per page</span>
+          <div className="flex items-center gap-1">
+            <ButtonDefault size="xs" className="px-2 py-1" variant="outline">
+              Previous
+            </ButtonDefault>
+            <span className="px-2 py-1">Page 1 of 1</span>
+            <ButtonDefault size="xs" className="px-2 py-1" variant="outline">
+              Next
+            </ButtonDefault>
           </div>
         </div>
       </div>

@@ -170,7 +170,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <NavLink to="/prodlog">Productivity Log</NavLink>
+                  <NavLink to="/prodlog">Productivity Logs</NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
