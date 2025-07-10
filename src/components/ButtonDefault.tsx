@@ -18,10 +18,7 @@ export function ButtonDefault({
   return (
     <Button
       variant="outline"
-      className={
-        `rounded-md bg-[var(--color-brand-orange)] text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue)] hover:text-[var(--color-brand-orange)] transition ${sizeClass} ` +
-        className
-      }
+      className={`${sizeClass} ` + className}
       {...props}
     />
   );

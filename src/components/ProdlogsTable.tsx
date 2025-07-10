@@ -189,7 +189,7 @@ export function ProdlogsTable() {
                     options={reasonOptions}
                     value={row.reason}
                     onChange={(v) => handleChange(row.id, "reason", v)}
-                    placeholder="Reason"
+                    placeholder="Reason (if any)"
                     size="sm"
                   />
                 </td>
@@ -207,7 +207,7 @@ export function ProdlogsTable() {
                   <ButtonDefault
                     variant="ghost"
                     size="sm"
-                    className="text-destructive hover:text-destructive/80"
+                    className="text-destructive hover:text-destructive/80 hover:bg-transparent dark:hover:bg-transparent"
                     onClick={() => handleRemoveRow(row.id)}
                   >
                     Remove
@@ -222,7 +222,7 @@ export function ProdlogsTable() {
         <div className="p-4 border-t border-border bg-muted/20">
           <ButtonDefault
             onClick={handleAddRow}
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto dark:hover:bg-accent"
             variant="outline"
           >
             Add New Entry
@@ -235,11 +235,19 @@ export function ProdlogsTable() {
             Showing {data.length} of {data.length} entries
           </span>
           <div className="flex items-center gap-1">
-            <ButtonDefault size="xs" className="px-2 py-1" variant="outline">
+            <ButtonDefault
+              size="xs"
+              className="px-2 py-1 dark:hover:bg-accent"
+              variant="outline"
+            >
               Previous
             </ButtonDefault>
             <span className="px-2 py-1">Page 1 of 1</span>
-            <ButtonDefault size="xs" className="px-2 py-1" variant="outline">
+            <ButtonDefault
+              size="xs"
+              className="px-2 py-1 dark:hover:bg-accent"
+              variant="outline"
+            >
               Next
             </ButtonDefault>
           </div>

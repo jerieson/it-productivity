@@ -44,7 +44,7 @@ export function SelectDefault({
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="!animate-none !transition-none">
         <SelectItem value="__none__" disabled>
           <span className="italic text-gray-400">{placeholder}</span>
         </SelectItem>
