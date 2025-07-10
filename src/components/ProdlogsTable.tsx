@@ -215,19 +215,20 @@ export function ProdlogsTable() {
                 </td>
               </tr>
             ))}
+            {/* Add Row Button */}
+            <tr>
+              <td className="p-2 min-w-[60px]">
+                <ButtonDefault
+                  onClick={handleAddRow}
+                  className="w-full sm:w-auto dark:hover:bg-accent"
+                  variant="outline"
+                >
+                  Add New Entry
+                </ButtonDefault>
+              </td>
+            </tr>
           </tbody>
         </table>
-
-        {/* Add Row Button */}
-        <div className="p-4 border-t border-border bg-muted/20">
-          <ButtonDefault
-            onClick={handleAddRow}
-            className="w-full sm:w-auto dark:hover:bg-accent"
-            variant="outline"
-          >
-            Add New Entry
-          </ButtonDefault>
-        </div>
 
         {/* Pagination */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground px-2 py-2">

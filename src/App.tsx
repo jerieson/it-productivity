@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { SidebarProvider } from "./components/ui/sidebar";
-import { AppSidebar } from "./components/app-sidebar";
+import { SidebarProvider } from "./components/ui/sidebar1";
+import { AppSidebar } from "./components/app-sidebar1";
 import { ProdlogsTable } from "./components/ProdlogsTable";
+import { Dashboard } from "./components/Dashboard";
 // import { ThemeToggle } from "./components/ThemeToggle";
 
 function Layout() {
@@ -24,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<h1>Dashboard</h1>} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/prodlog" element={<ProdlogsTable />} />
           <Route path="/dictionary" element={<h1>Data Dictionary</h1>} />
           <Route path="/reports/weekly" element={<h1>Weekly Reports</h1>} />
