@@ -362,50 +362,7 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  /* Animation utilities */
-  /* .animate-fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  .animate-slide-up {
-    animation: slideUp 0.3s ease-out;
-  }
-  .animate-scale-in {
-    animation: scaleIn 0.2s ease-out;
-  } */
 }
-
-/* Custom animations */
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
 
 /* Form input enhancements */
 .no-spinner::-webkit-outer-spin-button,
@@ -450,4 +407,192 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Sidebar base styles */
+[data-sidebar="sidebar"] {
+  background-color: var(--sidebar);
+  border-right: 1px solid var(--sidebar-border);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Remove width: 100% to prevent expansion */
+  width: inherit !important;
+  max-width: inherit !important;
+  height: 100vh;
+}
+
+/* Sidebar container width constraints - these are the key fixes */
+.sidebar-container-mobile {
+  width: 16rem !important; /* 64 * 4px = 256px */
+  max-width: 16rem !important;
+  min-width: 16rem !important;
+}
+
+.sidebar-container-desktop-open {
+  width: 16rem !important; /* 64 * 4px = 256px */
+  max-width: 16rem !important;
+  min-width: 16rem !important;
+}
+
+.sidebar-container-desktop-closed {
+  width: 4rem !important; /* 16 * 4px = 64px */
+  max-width: 4rem !important;
+  min-width: 4rem !important;
+}
+
+/* Ensure smooth transitions */
+.sidebar-transition {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix for sidebar menu items in collapsed state */
+[data-sidebar="sidebar"][data-state="collapsed"] .sidebar-menu-item {
+  justify-content: center;
+}
+
+[data-sidebar="sidebar"][data-state="collapsed"] .sidebar-menu-button {
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+
+/* Ensure proper spacing for collapsed sidebar icons */
+[data-sidebar="sidebar"][data-state="collapsed"] .lucide {
+  margin: 0 auto;
+}
+
+/* Active state styling - Enhanced */
+[data-sidebar="sidebar"] .sidebar-menu-button[data-active="true"],
+[data-sidebar="sidebar"] .sidebar-menu-button .active {
+  background-color: var(--sidebar-accent) !important;
+  color: var(--sidebar-accent-foreground) !important;
+  font-weight: 500;
+}
+
+/* Hover states */
+[data-sidebar="sidebar"] .sidebar-menu-button:hover {
+  background-color: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+  transition: all 200ms ease-in-out;
+}
+
+/* Active state override for hover */
+[data-sidebar="sidebar"] .sidebar-menu-button[data-active="true"]:hover,
+[data-sidebar="sidebar"] .sidebar-menu-button .active:hover {
+  background-color: var(--sidebar-accent) !important;
+  opacity: 0.9;
+}
+
+/* Mobile sidebar overlay fix */
+@media (max-width: 768px) {
+  [data-sidebar="sidebar"] {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .sidebar-container-mobile {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 50;
+  }
+}
+
+/* Desktop sidebar positioning */
+@media (min-width: 769px) {
+  .sidebar-container-desktop-open,
+  .sidebar-container-desktop-closed {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 30;
+  }
+}
+
+/* Main content area adjustments */
+.main-content-area {
+  transition: margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Backdrop styling */
+.sidebar-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/* Custom scrollbar for sidebar */
+[data-sidebar="sidebar"]::-webkit-scrollbar {
+  width: 6px;
+}
+
+[data-sidebar="sidebar"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-sidebar="sidebar"]::-webkit-scrollbar-thumb {
+  background: var(--sidebar-border);
+  border-radius: 3px;
+}
+
+[data-sidebar="sidebar"]::-webkit-scrollbar-thumb:hover {
+  background: var(--sidebar-accent);
+}
+
+/* Ensure proper z-index stacking */
+.mobile-menu-button {
+  z-index: 40;
+}
+
+.sidebar-container {
+  z-index: 50;
+}
+
+.sidebar-backdrop {
+  z-index: 40;
+}
+
+/* Fix for theme toggle positioning */
+.sidebar-theme-toggle {
+  margin-top: auto;
+}
+
+/* Logo container adjustments */
+.sidebar-logo-container {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+/* Group label styling */
+.sidebar-group-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Menu item styling improvements */
+.sidebar-menu-item {
+  margin-bottom: 0.125rem;
+}
+
+/* Ensure NavLink takes full width */
+[data-sidebar="sidebar"] .sidebar-menu-button a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  transition: all 200ms ease-in-out;
+}
+
+/* Collapsed state NavLink adjustments */
+[data-sidebar="sidebar"][data-state="collapsed"] .sidebar-menu-button a {
+  justify-content: center;
+  padding: 0.5rem 0.25rem;
 }
