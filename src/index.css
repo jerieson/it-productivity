@@ -381,25 +381,6 @@
   outline-offset: 2px;
 }
 
-/* Custom scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: var(--muted);
-  border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--brand-primary);
-  border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-secondary);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -415,7 +396,6 @@
   border-right: 1px solid var(--sidebar-border);
   overflow-x: hidden;
   overflow-y: auto;
-  /* Remove width: 100% to prevent expansion */
   width: inherit !important;
   max-width: inherit !important;
   height: 100vh;

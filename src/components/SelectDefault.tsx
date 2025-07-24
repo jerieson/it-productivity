@@ -25,10 +25,10 @@ export function SelectDefault({
   const displayValue = value === "" ? "__none__" : value;
   const sizeClass =
     size === "xs"
-      ? "min-w-[60px] px-1 py-0.5 text-xs"
+      ? "h-8 min-w-[70px] px-2 text-xs"
       : size === "sm"
-      ? "min-w-[80px] px-1 py-1 text-xs"
-      : "min-w-[120px] px-2 py-1.5 text-sm";
+      ? "h-8 min-w-[90px] px-2 text-xs"
+      : "h-9 min-w-[120px] px-3 text-sm";
 
   return (
     <Select
@@ -36,20 +36,24 @@ export function SelectDefault({
       onValueChange={(v) => onChange(v === "__none__" ? "" : v)}
     >
       <SelectTrigger
-        className={`
-          rounded-md border border-[var(--border)] bg-[var(--muted)]
-          focus:outline-none focus:ring-.5 focus:border-gray-900 transition shadow-none
-          ${sizeClass}
-        `}
+        className={`rounded-md border-border bg-background hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all data-[state=open]:ring-2 data-[state=open]:ring-ring ${sizeClass}`}
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent className="!animate-none !transition-none">
-        <SelectItem value="__none__" disabled>
-          <span className="italic text-gray-400">{placeholder}</span>
+      <SelectContent className="rounded-md border-border bg-popover text-popover-foreground shadow-md z-50 min-w-[8rem] overflow-hidden">
+        <SelectItem
+          value="__none__"
+          disabled
+          className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-xs italic text-muted-foreground"
+        >
+          {placeholder}
         </SelectItem>
         {options.map((option) => (
-          <SelectItem key={option} value={option}>
+          <SelectItem
+            key={option}
+            value={option}
+            className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-xs hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+          >
             {option}
           </SelectItem>
         ))}

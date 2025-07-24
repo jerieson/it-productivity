@@ -12,14 +12,12 @@ export function InputDefault({
 }: InputDefaultProps) {
   const sizeClass =
     size === "sm"
-      ? "px-1 py-1 text-xs min-w-[60px]"
-      : "px-2 py-1.5 text-sm min-w-[100px]";
+      ? "h-8 px-2 text-xs min-w-[70px]"
+      : "h-9 px-3 text-sm min-w-[120px]";
+
   return (
     <Input
-      className={
-        `rounded-md border border-[var(--border)] bg-[var(--muted)] focus:outline-none focus:ring-.5 focus:border-gray-900 transition shadow-none dark:bg-[var(--muted)] dark:border-[var(--border)] ${sizeClass} ` +
-        className
-      }
+      className={`rounded-md border-border bg-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-transparent transition-all ${sizeClass} ${className}`}
       {...props}
     />
   );

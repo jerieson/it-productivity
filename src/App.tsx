@@ -7,8 +7,7 @@ import {
 import { AppSidebar } from "./components/app-sidebar1";
 import { ProdlogsTable } from "./components/ProdlogsTable";
 import { Dashboard } from "./components/Dashboard";
-import { Menu, PanelLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { PanelLeft } from "lucide-react";
 
 function Layout() {
   return (

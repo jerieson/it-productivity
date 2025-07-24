@@ -5,7 +5,6 @@ import {
   Home,
   ClipboardList,
   BookOpen,
-  FileText,
   Calendar,
   Settings,
   LogOut,
@@ -108,7 +107,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             Home
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-2">
               {navigationItems.home.map((item) => {
                 const Icon = item.icon;
                 const isActive = isActiveRoute(item.url, item.isExact);
@@ -142,7 +141,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             Reports
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-2">
               {navigationItems.reports.map((item) => {
                 const Icon = item.icon;
                 const isActive = isActiveRoute(item.url, item.isExact);
@@ -176,7 +175,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             Settings
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-2">
               {navigationItems.settings.map((item) => {
                 const Icon = item.icon;
                 const isActive = isActiveRoute(item.url, item.isExact);
@@ -203,7 +202,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
               {/* Theme Toggle */}
               <SidebarMenuItem>
-                <div className="px-2 py-1.5">
+                <div className="px-2 py-2">
                   <ThemeToggle />
                 </div>
               </SidebarMenuItem>

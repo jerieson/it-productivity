@@ -11,14 +11,14 @@ export function ButtonDefault({
   ...props
 }: ButtonDefaultProps) {
   let sizeClass = "";
-  if (size === "xs") sizeClass = "px-2 py-1 text-xs min-w-[40px]";
-  else if (size === "sm") sizeClass = "px-3 py-1.5 text-sm min-w-[60px]";
-  else sizeClass = "px-4 py-2 text-base min-w-[80px]";
+  if (size === "xs") sizeClass = "h-8 px-2 text-xs min-w-[60px]";
+  else if (size === "sm") sizeClass = "h-9 px-3 text-xs min-w-[80px]";
+  else sizeClass = "h-10 px-4 text-sm min-w-[100px]";
 
   return (
     <Button
       variant="outline"
-      className={`${sizeClass} ` + className}
+      className={`rounded-md border-border bg-background hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors ${sizeClass} ${className}`}
       {...props}
     />
   );
