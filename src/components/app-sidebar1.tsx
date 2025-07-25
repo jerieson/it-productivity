@@ -1,6 +1,7 @@
 import * as React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import felcoLogo from "../assets/felco2.png";
+import felcoLogoDark from "../assets/felco4.png";
 import {
   Home,
   ClipboardList,
@@ -95,7 +96,12 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
           <img
             src={felcoLogo}
             alt="Felco Logo"
-            className="h-8 w-auto object-contain"
+            className="h-8 w-auto object-contain block dark:hidden"
+          />
+          <img
+            src={felcoLogoDark}
+            alt="Felco Logo"
+            className="h-8 w-auto object-contain hidden dark:block"
           />
         </div>
       </SidebarHeader>

@@ -18,7 +18,7 @@ export function ButtonDefault({
   return (
     <Button
       variant="outline"
-      className={`rounded-md border-border bg-background hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors ${sizeClass} ${className}`}
+      className={`rounded-md border-border bg-background hover:bg-accent dark:hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors ${sizeClass} ${className}`}
       {...props}
     />
   );

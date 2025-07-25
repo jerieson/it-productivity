@@ -225,9 +225,9 @@ export function ProdlogsTable() {
   );
 
   return (
-    <div className="@container/prodlogs w-full p-6">
+    <div className="@container/prodlogs w-full p-4 min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <CardHeader className="border rounded-t-xl border-b-0 bg-card py-4 pt-6">
+      <CardHeader className="rounded-xl border bg-card py-4 pt-6 shadow-sm mb-2">
         <div className="flex flex-col @[540px]/prodlogs:flex-row @[540px]/prodlogs:items-center @[540px]/prodlogs:justify-between gap-4 ">
           <div>
             <CardTitle className="@[540px]/prodlogs:text-md">
@@ -274,7 +274,7 @@ export function ProdlogsTable() {
 
       {/* Desktop View */}
       <div className="hidden @[900px]/prodlogs:block shadow-sm rounded-xl">
-        <ScrollArea className="w-full border bg-card whitespace-nowrap text-card-foreground">
+        <ScrollArea className="w-full border bg-card whitespace-nowrap text-card-foreground rounded-t-xl">
           <CardContent className="p-0 pb-2">
             <div className="relative">
               <table className="w-full">
@@ -448,14 +448,12 @@ export function ProdlogsTable() {
                             className="min-w-[120px]"
                           />
                         </td>
-                        <td className="h-14 px-4 align-middle text-right">
+                        <td className="">
                           <ButtonDefault
-                            variant="ghost"
-                            size="sm"
-                            className="h-8 w-8 p-0 text-card-foreground hover:text-card-foreground/80"
+                            size="xs"
                             onClick={() => handleRemoveRow(row.id)}
                           >
-                            <Trash2 className="h-4 w-4" />
+                            <Trash2 className="h-4 w-4 text-destructive" />
                           </ButtonDefault>
                         </td>
                       </tr>
@@ -469,7 +467,7 @@ export function ProdlogsTable() {
         </ScrollArea>
         {/* Pagination */}
         {data.length > 0 && (
-          <CardContent className="px-4 py-4 border rounded-b-xl bg-card border-t-0">
+          <CardContent className="px-4 py-2 border rounded-b-xl bg-card border-t-0">
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <span>
                 Showing {data.length} of {data.length} entries

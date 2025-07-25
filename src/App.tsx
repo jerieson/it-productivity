@@ -8,20 +8,19 @@ import { AppSidebar } from "./components/app-sidebar1";
 import { ProdlogsTable } from "./components/ProdlogsTable";
 import { Dashboard } from "./components/Dashboard";
 import { PanelLeft } from "lucide-react";
-
 function Layout() {
   return (
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
         {/* Header that works on both mobile and desktop */}
-        <header className="flex h-16 shrink-0 items-center gap-2 px-4 border-b bg-background">
-          <SidebarTrigger className="-ml-1">
+        <header className="flex h-14 shrink-0 items-center gap-2 px-4 border-b bg-gradient-to-r from-[#13294b] to-[#ffa400]">
+          <SidebarTrigger className="-ml-1 hover:bg-white/10 text-white">
             <PanelLeft className="h-4 w-4" />
             <span className="sr-only">Toggle sidebar</span>
           </SidebarTrigger>
           <div className="flex items-center gap-2">
-            <h1 className="font-semibold text-lg">FELCO</h1>
+            <h1 className="font-semibold text-lg text-white">FELCO</h1>
           </div>
         </header>
 

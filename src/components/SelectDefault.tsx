@@ -36,7 +36,7 @@ export function SelectDefault({
       onValueChange={(v) => onChange(v === "__none__" ? "" : v)}
     >
       <SelectTrigger
-        className={`rounded-md border-border bg-background hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all data-[state=open]:ring-2 data-[state=open]:ring-ring ${sizeClass}`}
+        className={`rounded-md border-border bg-background hover:text-accent dark:hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all data-[state=open]:ring-2 data-[state=open]:ring-ring ${sizeClass}`}
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>

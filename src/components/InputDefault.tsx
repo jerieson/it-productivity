@@ -17,7 +17,7 @@ export function InputDefault({
 
   return (
     <Input
-      className={`rounded-md border-border bg-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-transparent transition-all ${sizeClass} ${className}`}
+      className={`rounded-md border-border bg-background dark:hover:text-accent hover:text-accent placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-transparent transition-all ${sizeClass} ${className}`}
       {...props}
     />
   );
