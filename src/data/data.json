@@ -24,5 +24,18 @@
     "activity": "Implementation: Coding",
     "reason": "",
     "remarks": ""
+  },
+  {
+    "id": 3,
+    "month": "08_Aug",
+    "weekNo": "Week 5",
+    "plannedHours": 14.25,
+    "actualHours": "",
+    "planned": "Planned",
+    "category": "Project",
+    "project": "SFA",
+    "activity": "Implementation: Coding",
+    "reason": "",
+    "remarks": ""
   }
 ]

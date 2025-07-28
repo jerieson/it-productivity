@@ -1,4 +1,3 @@
-// src/components/ProdlogsTable.tsx
 import * as React from "react";
 import type { Prodlog } from "@/types/prodlog";
 import dummyData from "@/data/data.json";
@@ -225,7 +224,7 @@ export function ProdlogsTable() {
   );
 
   return (
-    <div className="@container/prodlogs w-full p-4 min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="@container/prodlogs w-full min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
       {/* Header */}
       <CardHeader className="rounded-xl border bg-card py-4 pt-6 shadow-sm mb-2">
         <div className="flex flex-col @[540px]/prodlogs:flex-row @[540px]/prodlogs:items-center @[540px]/prodlogs:justify-between gap-4 ">
