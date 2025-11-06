@@ -4,7 +4,7 @@ import {
   SelectContent,
   SelectItem,
   SelectValue,
-} from "@/components/ui/select1";
+} from "@/components/ui/select";
 
 type SelectDefaultProps = {
   options: string[];

@@ -1,27 +1,38 @@
+import * as React from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import {
   SidebarProvider,
   SidebarTrigger,
   SidebarInset,
 } from "./components/ui/sidebar1";
-import { AppSidebar } from "./components/app-sidebar1";
+import { AppSidebar } from "./components/Sidebar";
 import { ProdlogsTable } from "./components/ProdlogsTable";
 import { Dashboard } from "./components/Dashboard";
 import { PanelLeft } from "lucide-react";
+import { storageUtils } from "@/lib/storage";
+import { Toaster } from "@/components/ui/sonner";
+
 function Layout() {
+  // Initialize sidebar state from localStorage
+  const [sidebarOpen, setSidebarOpen] = React.useState(() =>
+    storageUtils.getSidebarState()
+  );
+
+  // Save to localStorage whenever it changes
+  React.useEffect(() => {
+    storageUtils.saveSidebarState(sidebarOpen);
+  }, [sidebarOpen]);
+
   return (
-    <SidebarProvider>
+    <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
       <AppSidebar />
       <SidebarInset>
         {/* Header that works on both mobile and desktop */}
-        <header className="flex h-14 shrink-0 items-center gap-2 px-4 border-b bg-gradient-to-r from-[#13294b] to-[#ffa400]">
-          <SidebarTrigger className="-ml-1 hover:bg-white/10 text-white">
+        <header className="flex h-14 shrink-0 items-center gap-2 px-4 border-b bg-[#13294b]">
+          <SidebarTrigger className="hover:bg-white/10 dark:hover:bg-white/10 text-white hover:text-gray-50">
             <PanelLeft className="h-4 w-4" />
             <span className="sr-only">Toggle sidebar</span>
           </SidebarTrigger>
-          <div className="flex items-center gap-2">
-            <h1 className="font-semibold text-lg text-white">FELCO</h1>
-          </div>
         </header>
 
         {/* Main content area that adjusts with sidebar */}
@@ -38,6 +49,7 @@ function Layout() {
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="bottom-left"/>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
